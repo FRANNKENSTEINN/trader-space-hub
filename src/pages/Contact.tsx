@@ -56,7 +56,7 @@ const Contact = () => {
               <h2 className="text-2xl font-semibold mb-6">Location</h2>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6842048349445!2d77.5945!3d13.0587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAzJzMxLjMiTiA3N8KwMzUnNDAuMiJF!5e0!3m2!1sen!2sin!4v1620812345678!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8876544806087!2d77.59747317574714!3d13.047155513508547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b1e918611d%3A0x9c78fefe15c8ee0e!2sMS%20Palya%2C%20Bengaluru%2C%20Karnataka%20560054!5e0!3m2!1sen!2sin!4v1709913357035!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

@@ -78,12 +78,49 @@ const Products = () => {
                       href={createWhatsAppLink(product)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                      className="px-6 py-2.5 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] transition-colors shadow-md text-base font-medium"
                     >
                       Order via WhatsApp
                     </a>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Product Information */}
+        <div className="container mx-auto mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="glass-card p-8 rounded-xl">
+              <h2 className="text-2xl font-semibold mb-4">Quality Guarantee</h2>
+              <p className="text-gray-600">
+                We stand behind the quality of our products. Each item is carefully selected
+                and inspected to ensure it meets our high standards. If you're not completely
+                satisfied, we offer a hassle-free return policy.
+              </p>
+            </div>
+            <div className="glass-card p-8 rounded-xl">
+              <h2 className="text-2xl font-semibold mb-4">Shipping Information</h2>
+              <p className="text-gray-600">
+                We offer fast and reliable shipping across Bangalore. Most orders are
+                delivered within 24-48 hours. For bulk orders or special delivery
+                requirements, please contact us directly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Categories */}
+        <div className="container mx-auto mt-16">
+          <h2 className="text-3xl font-bold text-center mb-8">Our Categories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {["Premium Collection", "Best Sellers", "New Arrivals"].map((category, index) => (
+              <div key={index} className="glass-card p-6 rounded-xl text-center">
+                <h3 className="text-xl font-semibold mb-2">{category}</h3>
+                <p className="text-gray-600">
+                  Explore our selection of carefully curated products.
+                </p>
               </div>
             ))}
           </div>
