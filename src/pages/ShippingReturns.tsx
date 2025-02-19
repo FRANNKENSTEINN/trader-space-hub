@@ -21,13 +21,13 @@ const ShippingReturns = () => {
                 <h2 className="text-2xl font-semibold">Shipping Policy</h2>
               </div>
               <div className="space-y-4 text-gray-700">
-                <p>We are committed to delivering your orders promptly and securely:</p>
+                <p>We strive to make your delivery experience convenient and reliable:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Free delivery within Bangalore city limits</li>
+                  <li>Complimentary delivery service within Bangalore city limits</li>
                   <li>Same-day delivery for orders placed before 2 PM</li>
                   <li>Next-day delivery for orders placed after 2 PM</li>
-                  <li>Delivery tracking available via WhatsApp</li>
-                  <li>Special handling for bulk orders</li>
+                  <li>Delivery status updates via SMS or email</li>
+                  <li>Special arrangements available for bulk orders</li>
                 </ul>
               </div>
             </div>
@@ -41,11 +41,11 @@ const ShippingReturns = () => {
               <div className="space-y-4 text-gray-700">
                 <p>We want you to be completely satisfied with your purchase:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>7-day exchange window from delivery date</li>
-                  <li>Product must be unused and in original packaging</li>
-                  <li>Exchange subject to stock availability</li>
-                  <li>Free pickup for exchange items</li>
-                  <li>Quality check required before exchange approval</li>
+                  <li>Hassle-free exchanges within 7 days of delivery</li>
+                  <li>Simply ensure the product is unused and in original packaging</li>
+                  <li>Our team will help you find the right alternative</li>
+                  <li>Complimentary pickup service for exchanges</li>
+                  <li>Quick processing of exchange requests</li>
                 </ul>
               </div>
             </div>
@@ -57,13 +57,13 @@ const ShippingReturns = () => {
                 <h2 className="text-2xl font-semibold">Refund Policy</h2>
               </div>
               <div className="space-y-4 text-gray-700">
-                <p>Our refund process is designed to be fair and transparent:</p>
+                <p>Our refund process is simple and straightforward:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Full refunds available within 7 days of delivery</li>
-                  <li>Refund processed within 3-5 business days</li>
-                  <li>Original payment method will be refunded</li>
-                  <li>Damaged or defective items eligible for immediate refund</li>
-                  <li>Return shipping costs covered for defective items</li>
+                  <li>Refund requests welcome within 7 days of delivery</li>
+                  <li>Quick processing time of 3-5 business days</li>
+                  <li>Refunds issued to original payment method</li>
+                  <li>Our team is here to assist with any questions</li>
+                  <li>Clear communication throughout the process</li>
                 </ul>
               </div>
             </div>
