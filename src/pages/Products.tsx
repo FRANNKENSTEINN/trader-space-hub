@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
@@ -78,9 +77,9 @@ const Products = () => {
                       href={createWhatsAppLink(product)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2.5 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] transition-colors shadow-md text-base font-medium"
+                      className="px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] transition-colors shadow-md text-sm font-medium"
                     >
-                      Order via WhatsApp
+                      Order Now
                     </a>
                   </div>
                 </div>
@@ -96,8 +95,7 @@ const Products = () => {
               <h2 className="text-2xl font-semibold mb-4">Quality Guarantee</h2>
               <p className="text-gray-600">
                 We stand behind the quality of our products. Each item is carefully selected
-                and inspected to ensure it meets our high standards. If you're not completely
-                satisfied, we offer a hassle-free return policy.
+                and inspected to ensure it meets our high standards.
               </p>
             </div>
             <div className="glass-card p-8 rounded-xl">
