@@ -18,7 +18,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold text-white hover:text-blue-100 transition-colors">
+          <Link 
+            to="/" 
+            className="text-2xl font-bold logo-animate"
+          >
             SR Traders
           </Link>
 
