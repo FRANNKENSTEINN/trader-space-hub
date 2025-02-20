@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,21 +10,39 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4 bg-gradient-to-b from-blue-500 to-blue-600">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-white">
-            Welcome to SR Traders
-          </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in">
-            Your trusted partner for quality products and exceptional service in
-            Bangalore
-          </p>
-          <Link
-            to="/products"
-            className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors animate-fade-in font-semibold"
-          >
-            Explore Products
-          </Link>
+      <section className="pt-24 pb-12 px-4 bg-gradient-to-br from-[#8B5CF6] via-blue-600 to-[#D4AF37] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920')] opacity-10 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/90" />
+        <div className="container mx-auto text-center relative z-10">
+          <div className="animate-fade-in space-y-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
+              Welcome to SR Traders
+            </h1>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in">
+              Your trusted partner for quality products and exceptional service in
+              Bangalore
+            </p>
+            <div className="space-x-4">
+              <Link
+                to="/products"
+                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-colors animate-fade-in font-semibold hover:bg-opacity-90"
+              >
+                Explore Products
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors animate-fade-in font-semibold"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+          
+          {/* Animated Decorative Elements */}
+          <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-blue-600" />
+          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+            <div className="w-2 h-16 bg-gradient-to-b from-[#D4AF37] to-transparent rounded-full animate-pulse" />
+          </div>
         </div>
       </section>
 
