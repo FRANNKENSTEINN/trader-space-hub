@@ -31,7 +31,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="text-white/90 font-medium hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+                className="text-white/90 font-medium hover:text-[#D4AF37] transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#D4AF37] after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
               >
                 {item.name}
               </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white hover:text-[#D4AF37] transition-colors duration-300"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-[#D4AF37] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

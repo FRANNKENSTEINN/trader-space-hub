@@ -77,7 +77,7 @@ const Products = () => {
                       href={createWhatsAppLink(product)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] transition-colors shadow-md text-sm font-medium"
+                      className="px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] hover:text-[#D4AF37] transition-all duration-300 shadow-md text-sm font-medium"
                     >
                       Order Now
                     </a>
@@ -88,7 +88,6 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Additional Product Information */}
         <div className="container mx-auto mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="glass-card p-8 rounded-xl">
@@ -109,7 +108,6 @@ const Products = () => {
           </div>
         </div>
 
-        {/* Product Categories */}
         <div className="container mx-auto mt-16">
           <h2 className="text-3xl font-bold text-center mb-8">Our Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
