@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Map from "../components/Map";
 
 const Contact = () => {
   return (
@@ -41,42 +42,21 @@ const Contact = () => {
                   <p>Sunday: Closed</p>
                 </div>
               </div>
+
+              <a
+                href="https://maps.app.goo.gl/CKfbad4wbaBF9bQu7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card p-4 rounded-xl flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 hover:text-[#D4AF37] transition-all duration-300"
+              >
+                <MapPin className="h-5 w-5 mr-2" />
+                Get Directions
+              </a>
             </div>
 
-            {/* Contact Form */}
-            <div className="glass-card p-6 rounded-xl">
-              <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
-                  <textarea
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent h-32"
-                    placeholder="Enter your message"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
+            {/* Map Section */}
+            <div className="glass-card p-2 rounded-xl h-[500px]">
+              <Map />
             </div>
           </div>
         </div>
