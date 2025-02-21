@@ -1,37 +1,84 @@
+
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 import { Star, Package, Truck, Phone } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const Index = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const scrolled = window.scrollY;
+        const parallaxSpeed = 0.5;
+        heroRef.current.style.backgroundPositionY = `${scrolled * parallaxSpeed}px`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Add entrance animations
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4 bg-gradient-to-br from-[#8B5CF6] via-blue-600 to-[#D4AF37] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920')] opacity-10 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-600/90" />
-        <div className="container mx-auto text-center relative z-10">
-          <div className="animate-fade-in space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
+      <section 
+        ref={heroRef}
+        className="relative min-h-[80vh] pt-24 pb-12 px-4 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-[#D4AF37]"
+        style={{
+          backgroundImage: `url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/90 via-blue-700/80 to-[#D4AF37]/50 backdrop-blur-sm" />
+        
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
               Welcome to SR Traders
             </h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto animate-fade-in">
+            <p className="text-xl text-blue-100 mb-8 animate-on-scroll opacity-0">
               Your trusted partner for quality products and exceptional service in
               Bangalore
             </p>
-            <div className="space-x-4">
+            <div className="space-x-4 animate-on-scroll opacity-0">
               <Link
                 to="/products"
-                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-colors animate-fade-in font-semibold hover:bg-opacity-90"
+                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors animate-fade-in font-semibold"
+                className="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 font-semibold transform hover:-translate-y-1"
               >
                 Contact Us
               </Link>
@@ -39,9 +86,14 @@ const Index = () => {
           </div>
           
           {/* Animated Decorative Elements */}
-          <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-blue-600" />
-          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-            <div className="w-2 h-16 bg-gradient-to-b from-[#D4AF37] to-transparent rounded-full animate-pulse" />
+          <div className="absolute left-0 right-0 -bottom-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
+              <path
+                fill="#ffffff"
+                fillOpacity="1"
+                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
           </div>
         </div>
       </section>
