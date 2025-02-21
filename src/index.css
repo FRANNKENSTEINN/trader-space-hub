@@ -27,6 +27,11 @@
     --ring: 217 91% 60%;
     --radius: 0.75rem;
   }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+  }
 }
 
 @layer base {
@@ -174,6 +179,10 @@
   .btn-secondary {
     @apply px-4 py-2 bg-white text-blue-600 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:text-[#D4AF37] shadow-md;
   }
+}
+
+.theme-transition {
+  @apply transition-colors duration-300;
 }
 
 .animate-fade-in {

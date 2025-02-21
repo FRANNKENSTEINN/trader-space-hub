@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
+import ThemeToggle from "../components/ThemeToggle";
 import { Star, Package, Truck, Phone, Cloud } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -42,13 +43,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:bg-black dark:text-white transition-colors duration-300">
+      <ThemeToggle />
       <Navbar />
       
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-[80vh] pt-24 pb-12 px-4 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-[#D4AF37]"
+        className="relative min-h-[80vh] pt-24 pb-12 px-4 overflow-hidden animate-bg-fade"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920')`,
           backgroundSize: 'cover',
@@ -56,8 +58,8 @@ const Index = () => {
           backgroundAttachment: 'fixed'
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/90 via-blue-700/80 to-[#D4AF37]/50 backdrop-blur-sm" />
+        {/* Overlay with fade effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-white/50 dark:from-black/90 dark:via-transparent dark:to-black/50 backdrop-blur-sm transition-colors duration-300" />
         
         {/* Animated Clouds */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -84,7 +86,7 @@ const Index = () => {
             <div className="space-x-4 animate-on-scroll opacity-0">
               <Link
                 to="/products"
-                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1"
+                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
               >
                 Explore Products
               </Link>
@@ -99,7 +101,7 @@ const Index = () => {
         </div>
 
         {/* Gradient Transition */}
-        <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent dark:from-black dark:to-transparent transition-colors duration-300" />
       </section>
 
       {/* Features Section */}
