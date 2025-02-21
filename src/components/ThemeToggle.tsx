@@ -1,18 +1,10 @@
 
 import { Moon, Sun, Home } from "lucide-react";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className="fixed top-4 right-4 z-50 flex items-center gap-4">
@@ -24,7 +16,7 @@ const ThemeToggle = () => {
       </Link>
       
       <button
-        onClick={() => setIsDark(!isDark)}
+        onClick={toggleTheme}
         className="p-2.5 rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
         aria-label="Toggle theme"
       >

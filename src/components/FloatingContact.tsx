@@ -1,22 +1,14 @@
 
 import { Mail, MessageCircle, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 const FloatingContact = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
       <button
-        onClick={() => setIsDark(!isDark)}
+        onClick={toggleTheme}
         className={`p-3 rounded-full transition-all shadow-lg hover:scale-110 transform duration-200 ${
           isDark 
             ? 'bg-gray-800 text-white hover:bg-gray-700' 
