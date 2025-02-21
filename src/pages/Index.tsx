@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
-import { Star, Package, Truck, Phone } from "lucide-react";
+import { Star, Package, Truck, Phone, Cloud } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const Index = () => {
@@ -23,7 +23,6 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Add entrance animations
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     
     const observer = new IntersectionObserver((entries) => {
@@ -60,6 +59,19 @@ const Index = () => {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/90 via-blue-700/80 to-[#D4AF37]/50 backdrop-blur-sm" />
         
+        {/* Animated Clouds */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="animate-cloud absolute top-[10%] opacity-20">
+            <Cloud className="w-32 h-32 text-white" />
+          </div>
+          <div className="animate-cloud-slow absolute top-[30%] opacity-15">
+            <Cloud className="w-48 h-48 text-white" />
+          </div>
+          <div className="animate-cloud-slower absolute top-[60%] opacity-10">
+            <Cloud className="w-40 h-40 text-white" />
+          </div>
+        </div>
+        
         <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
@@ -84,18 +96,10 @@ const Index = () => {
               </Link>
             </div>
           </div>
-          
-          {/* Animated Decorative Elements */}
-          <div className="absolute left-0 right-0 -bottom-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
-              <path
-                fill="#ffffff"
-                fillOpacity="1"
-                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </svg>
-          </div>
         </div>
+
+        {/* Gradient Transition */}
+        <div className="absolute left-0 right-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Features Section */}
