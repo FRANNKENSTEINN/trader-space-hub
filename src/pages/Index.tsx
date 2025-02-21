@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -75,24 +74,24 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
+          <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-6 sm:space-y-4">
+            <h1 className="text-5xl md:text-4xl sm:text-3xl font-bold text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
               Welcome to SR Traders
             </h1>
-            <p className="text-xl text-blue-100 mb-8 animate-on-scroll opacity-0">
+            <p className="text-xl md:text-lg sm:text-base text-blue-100 mb-8 animate-on-scroll opacity-0">
               Your trusted partner for quality products and exceptional service in
               Bangalore
             </p>
             <div className="space-x-4 animate-on-scroll opacity-0">
               <Link
                 to="/products"
-                className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
+                className="inline-block px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="inline-block px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 font-semibold transform hover:-translate-y-1"
+                className="inline-block px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 font-semibold transform hover:-translate-y-1"
               >
                 Contact Us
               </Link>
@@ -107,33 +106,34 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+          <h2 className="text-3xl md:text-2xl sm:text-xl font-bold text-center mb-12 text-gray-900">
             Why Choose SR Traders?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Quality Products",
-                description:
-                  "We source only the finest products for our customers.",
+                description: "We source only the finest products for our customers.",
               },
               {
                 title: "Fast Delivery",
-                description:
-                  "Quick and reliable delivery service across Bangalore.",
+                description: "Quick and reliable delivery service across Bangalore.",
               },
               {
                 title: "Customer Support",
-                description:
-                  "24/7 customer support to assist you with your needs.",
+                description: "24/7 customer support to assist you with your needs.",
               },
             ].map((feature, index) => (
               <div
                 key={index}
                 className="glass-card p-6 rounded-xl hover-scale"
               >
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">{feature.title}</h3>
-                <p className="text-gray-700">{feature.description}</p>
+                <h3 className="text-xl md:text-lg sm:text-base font-semibold mb-4 text-blue-600">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-700 text-base md:text-sm sm:text-xs">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import { Mail, MessageCircle } from "lucide-react";
 
 const FloatingContact = () => {
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col space-y-4 md:space-y-3 sm:space-y-2">
       <a
         href="https://wa.me/1234567890?text=Hello%20SR%20Traders%2C%20I%20am%20interested%20in%20your%20products.%20Location%3A%20MS%20Palya%20Jamia%20Masjid%2C%20Bangalore"
         target="_blank"
