@@ -19,8 +19,8 @@ const FloatingContact = () => {
         onClick={() => setIsDark(!isDark)}
         className={`p-3 rounded-full transition-all shadow-lg hover:scale-110 transform duration-200 ${
           isDark 
-            ? 'bg-white text-black hover:bg-gray-100' 
-            : 'bg-gray-800 text-white hover:bg-gray-700'
+            ? 'bg-gray-800 text-white hover:bg-gray-700' 
+            : 'bg-white text-black hover:bg-gray-100'
         }`}
         aria-label="Toggle theme"
       >
