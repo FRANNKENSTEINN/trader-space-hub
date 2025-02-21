@@ -11,15 +11,15 @@ const FloatingContact = () => {
         onClick={toggleTheme}
         className={`p-3 rounded-full transition-all shadow-lg hover:scale-110 transform duration-200 ${
           isDark 
-            ? 'bg-gray-800 text-white hover:bg-gray-700' 
-            : 'bg-white text-black hover:bg-gray-100'
+            ? 'bg-gray-800 hover:bg-gray-700' 
+            : 'bg-white hover:bg-gray-100'
         }`}
         aria-label="Toggle theme"
       >
         {isDark ? (
-          <Sun className="w-6 h-6" />
+          <Sun className="w-6 h-6 text-white" />
         ) : (
-          <Moon className="w-6 h-6" />
+          <Moon className="w-6 h-6 text-gray-800" />
         )}
       </button>
       <a
