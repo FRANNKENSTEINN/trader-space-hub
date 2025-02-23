@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
+import { useState, useEffect } from "react";
 
 const products = [
   {
@@ -44,11 +45,24 @@ const products = [
     name: "White Textured Waste",
     description: "Premium white textured waste material for specific needs.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/ee9dcde6-e402-468c-9117-d0fc9dc2169f.png",
+    images: [
+      "/lovable-uploads/46aed311-9cb9-481a-9295-f67c20a3f331.png",
+      "/lovable-uploads/d01d96b9-6946-4326-ad74-f949ba4d0fae.png"
+    ],
   }
 ];
 
 const Products = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
+    }, 3000); // Switch every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const createWhatsAppLink = (product: typeof products[0]) => {
     const message = `Hello SR Traders, I am interested in ${product.name}. Location: MS Palya Jamia Masjid, Bangalore`;
     return `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
@@ -68,12 +82,21 @@ const Products = () => {
                 key={product.id}
                 className="glass-card rounded-xl overflow-hidden hover-scale"
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover"
-                  loading="lazy"
-                />
+                {('images' in product) ? (
+                  <img
+                    src={product.images[currentImageIndex]}
+                    alt={product.name}
+                    className="w-full h-64 object-cover transition-opacity duration-500"
+                    loading="lazy"
+                  />
+                ) : (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-64 object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
