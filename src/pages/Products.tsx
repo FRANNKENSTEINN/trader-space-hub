@@ -20,8 +20,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Packed Waste (both 1 & 2)",
-    description: "Professionally packed cotton and baniyan waste.",
+    name: "Packed Waste (Cotton and Baniyan)",
+    description: "Professionally packed cotton and baniyan waste material.",
     price: "₹Contact for Price",
     image: "/lovable-uploads/bb9597cf-5186-4922-9603-56bbba64fdd7.png",
   },
@@ -31,6 +31,20 @@ const products = [
     description: "Large quantity packages available for bulk orders.",
     price: "₹Contact for Price",
     image: "/lovable-uploads/1d6bbaf5-45cb-43c1-a1d9-14911178654f.png",
+  },
+  {
+    id: 5,
+    name: "Cloth Waste",
+    description: "Mixed cloth waste material suitable for various applications.",
+    price: "₹Contact for Price",
+    image: "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png", // Reusing first image
+  },
+  {
+    id: 6,
+    name: "White Textured Waste",
+    description: "Premium white textured waste material for specific needs.",
+    price: "₹Contact for Price",
+    image: "/lovable-uploads/ee9dcde6-e402-468c-9117-d0fc9dc2169f.png", // Reusing second image
   }
 ];
 
