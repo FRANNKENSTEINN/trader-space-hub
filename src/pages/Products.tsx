@@ -30,7 +30,7 @@ const products = [
     name: "Bulk",
     description: "Large quantity packages available for bulk orders.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/e14105a7-0390-4b18-89f5-7d4d36dcb993.png", // Updated with first new bulk image
+    image: "/lovable-uploads/1d6bbaf5-45cb-43c1-a1d9-14911178654f.png",
   },
   {
     id: 5,
