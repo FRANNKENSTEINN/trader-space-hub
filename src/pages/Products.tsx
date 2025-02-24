@@ -85,7 +85,7 @@ const Products = () => {
     }));
   };
 
-  const createWhatsAppLink = (product: typeof products[0]) => {
+  const createWhatsAppLink = (product: (typeof products)[0]) => {
     const message = `Hello SR Traders, I am interested in ${product.name}. Location: MS Palya Jamia Masjid, Bangalore`;
     return `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
   };
@@ -95,6 +95,14 @@ const Products = () => {
       <Navbar />
 
       <main className="flex-grow pt-24 pb-16 px-4">
+        <div className="w-full bg-blue-50 py-2 overflow-hidden mb-8">
+          <div className="animate-marquee whitespace-nowrap">
+            <span className="text-blue-600 font-medium inline-block px-4">
+              ⚠️ Product prices may vary based on quality, quantity, and market conditions. Please contact us for the latest pricing information.
+            </span>
+          </div>
+        </div>
+
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">Our Products</h1>
 

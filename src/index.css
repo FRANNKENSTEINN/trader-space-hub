@@ -115,6 +115,15 @@
   }
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 .animate-cloud {
   animation: float-cloud 20s linear infinite;
 }
@@ -187,4 +196,8 @@
 
 .animate-fade-in {
   animation: fade-in 1s forwards ease-out;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
