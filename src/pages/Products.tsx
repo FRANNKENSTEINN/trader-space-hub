@@ -2,7 +2,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const products = [
   {
@@ -31,7 +32,10 @@ const products = [
     name: "Bulk",
     description: "Large quantity packages available for bulk orders.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/1d6bbaf5-45cb-43c1-a1d9-14911178654f.png",
+    images: [
+      "/lovable-uploads/e82329e9-b71d-4baa-9289-2d4f17429db0.png",
+      "/lovable-uploads/e5a51953-82f1-4c78-b29d-1f31de5ea946.png"
+    ],
   },
   {
     id: 5,
@@ -46,22 +50,28 @@ const products = [
     description: "Premium white textured waste material for specific needs.",
     price: "₹Contact for Price",
     images: [
-      "/lovable-uploads/46aed311-9cb9-481a-9295-f67c20a3f331.png",
-      "/lovable-uploads/d01d96b9-6946-4326-ad74-f949ba4d0fae.png"
+      "/lovable-uploads/8ea6ccd4-8a6e-4b34-a5f8-de696aedf003.png",
+      "/lovable-uploads/c64ce376-adfd-4342-a051-557c9ff63fa9.png"
     ],
   }
 ];
 
 const Products = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageIndexes, setImageIndexes] = useState<{ [key: number]: number }>({});
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
-    }, 3000); // Switch every 3 seconds
+  const handlePrevImage = (productId: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [productId]: prev[productId] === 0 ? 1 : 0
+    }));
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  const handleNextImage = (productId: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [productId]: prev[productId] === 1 ? 0 : 1
+    }));
+  };
 
   const createWhatsAppLink = (product: typeof products[0]) => {
     const message = `Hello SR Traders, I am interested in ${product.name}. Location: MS Palya Jamia Masjid, Bangalore`;
@@ -82,21 +92,41 @@ const Products = () => {
                 key={product.id}
                 className="glass-card rounded-xl overflow-hidden hover-scale"
               >
-                {('images' in product) ? (
-                  <img
-                    src={product.images[currentImageIndex]}
-                    alt={product.name}
-                    className="w-full h-64 object-cover transition-opacity duration-500"
-                    loading="lazy"
-                  />
-                ) : (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover"
-                    loading="lazy"
-                  />
-                )}
+                <div className="relative">
+                  {('images' in product) ? (
+                    <>
+                      <img
+                        src={product.images[imageIndexes[product.id] || 0]}
+                        alt={product.name}
+                        className="w-full h-64 object-cover transition-opacity duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-between px-4">
+                        <button
+                          onClick={() => handlePrevImage(product.id)}
+                          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="w-6 h-6" />
+                        </button>
+                        <button
+                          onClick={() => handleNextImage(product.id)}
+                          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="w-6 h-6" />
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-64 object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
