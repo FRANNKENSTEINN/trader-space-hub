@@ -11,14 +11,20 @@ const products = [
     name: "Cotton Waste",
     description: "High-quality cotton waste material with mixed colors.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png",
+    images: [
+      "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png",
+      "/lovable-uploads/3ba1189f-5193-4bc4-90d3-445f0a4cd5d4.png"
+    ],
   },
   {
     id: 2,
     name: "Baniyan Waste",
     description: "Premium baniyan waste material in vibrant colors.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/ee9dcde6-e402-468c-9117-d0fc9dc2169f.png",
+    images: [
+      "/lovable-uploads/ee9dcde6-e402-468c-9117-d0fc9dc2169f.png",
+      "/lovable-uploads/f7d4860e-0eb4-4576-b52c-04f88b87e793.png"
+    ],
   },
   {
     id: 3,
@@ -42,7 +48,10 @@ const products = [
     name: "Cloth Waste",
     description: "Mixed cloth waste material suitable for various applications.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png",
+    images: [
+      "/lovable-uploads/d2d04054-8341-4062-8800-e0561e81fad8.png",
+      "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png"
+    ],
   },
   {
     id: 6,
