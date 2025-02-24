@@ -31,7 +31,10 @@ const products = [
     name: "Packed Waste (Cotton and Baniyan)",
     description: "Professionally packed cotton and baniyan waste material.",
     price: "₹Contact for Price",
-    image: "/lovable-uploads/bb9597cf-5186-4922-9603-56bbba64fdd7.png",
+    images: [
+      "/lovable-uploads/bb9597cf-5186-4922-9603-56bbba64fdd7.png",
+      "/lovable-uploads/24b20ca4-1ef1-488a-aa48-3b2cdd31d440.png"
+    ],
   },
   {
     id: 4,
