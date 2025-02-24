@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
@@ -52,8 +51,7 @@ const products = [
     description: "Mixed cloth waste material suitable for various applications.",
     price: "₹Contact for Price",
     images: [
-      "/lovable-uploads/d2d04054-8341-4062-8800-e0561e81fad8.png",
-      "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png"
+      "/lovable-uploads/d2d04054-8341-4062-8800-e0561e81fad8.png"
     ],
   },
   {
