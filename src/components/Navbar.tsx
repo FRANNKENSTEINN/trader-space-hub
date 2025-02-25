@@ -15,16 +15,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 shadow-lg transition-colors duration-500 hover:from-blue-600 hover:via-blue-500 hover:to-blue-600">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <Link 
             to="/" 
-            className="flex items-center space-x-3 text-2xl font-bold logo-animate"
+            className="flex items-center space-x-3 text-xl font-bold logo-animate"
           >
             <Truck size={32} className="text-white" />
             <span className="flex flex-col">
-              <span>SR Traders</span>
+              <span className="text-[#D4AF37]">SR Traders</span>
               <span className="text-sm font-normal text-white/80">Quality Waste Materials</span>
             </span>
           </Link>
