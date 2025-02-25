@@ -16,7 +16,7 @@ const About = () => {
             <div className="text-center mb-16">
               <h1 className="text-4xl font-bold mb-6">About SR Traders</h1>
               <p className="text-xl text-gray-600">
-                Building trust through quality products and exceptional service since 2010
+                Building trust through quality products and exceptional service since 2015
               </p>
             </div>
 
@@ -27,14 +27,14 @@ const About = () => {
                 <h2 className="text-2xl font-semibold">Our Story</h2>
               </div>
               <p className="text-gray-700 mb-4">
-                Founded in 2010, SR Traders has grown from a small local business to become
+                Founded in 2015, SR Traders has grown from a small local business to become
                 one of Bangalore's most trusted wholesale suppliers. Our journey began with
                 a simple mission: to provide quality products at competitive prices while
                 maintaining the highest standards of customer service.
               </p>
               <p className="text-gray-700">
-                Today, we serve hundreds of businesses and individual customers across
-                Bangalore, building lasting relationships based on trust and reliability.
+                Today, we proudly serve 50+ businesses across Bangalore, building lasting
+                relationships based on trust and reliability.
               </p>
             </div>
 
@@ -47,7 +47,7 @@ const About = () => {
                 </div>
                 <p className="text-gray-700">
                   To be the most trusted supplier in Bangalore by consistently delivering
-                  quality products and exceptional service to our customers.
+                  quality products and exceptional service to our 50+ satisfied customers.
                 </p>
               </div>
               <div className="glass-card p-8 rounded-xl">
@@ -87,6 +87,9 @@ const About = () => {
 
       <FloatingContact />
       <Footer />
+      <div className="bg-gray-900 text-white/80 py-2 text-center text-sm">
+        <p>© 2024 IK WEB DESIGNS. All rights reserved.</p>
+      </div>
     </div>
   );
 };

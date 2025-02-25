@@ -1,41 +1,18 @@
 
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React from 'react';
 
 const Map = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-
-  useEffect(() => {
-    if (!mapContainer.current) return;
-
-    // Initialize map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG92YWJsZWFpIiwiYSI6ImNscnQ3eDhzbjBjdHEyam1ucHY5ZXZnY3YifQ.ZW9T5lOgLkKYlm6X1K-yjQ';
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [77.6156, 13.0355], // Bangalore coordinates
-      zoom: 14,
-    });
-
-    // Add marker at SR Traders location
-    const marker = new mapboxgl.Marker({ color: '#D4AF37' })
-      .setLngLat([77.6156, 13.0355])
-      .addTo(map.current);
-
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    return () => {
-      map.current?.remove();
-    };
-  }, []);
-
   return (
     <div className="h-full w-full rounded-lg overflow-hidden">
-      <div ref={mapContainer} className="h-full w-full" />
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7602042779396!2d77.61341091482233!3d13.035504490815872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17c5c85e0beb%3A0x4c2a5041e0583b91!2sMS%20Palya%2C%20Jamia%20Masjid!5e0!3m2!1sen!2sin!4v1645518269012!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen={true}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
   );
 };

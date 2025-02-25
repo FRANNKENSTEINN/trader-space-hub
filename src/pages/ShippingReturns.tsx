@@ -24,8 +24,8 @@ const ShippingReturns = () => {
                 <p>We strive to make your delivery experience convenient and reliable:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Complimentary delivery service within Bangalore city limits</li>
-                  <li>Same-day delivery for orders placed before 2 PM</li>
-                  <li>Next-day delivery for orders placed after 2 PM</li>
+                  <li>Orders placed before 2 PM: Same-day delivery</li>
+                  <li>Orders placed after 2 PM: Next-day delivery (1 day processing time)</li>
                   <li>Delivery status updates via SMS or email</li>
                   <li>Special arrangements available for bulk orders</li>
                 </ul>
@@ -73,6 +73,9 @@ const ShippingReturns = () => {
 
       <FloatingContact />
       <Footer />
+      <div className="bg-gray-900 text-white/80 py-2 text-center text-sm">
+        <p>© 2024 IK WEB DESIGNS. All rights reserved.</p>
+      </div>
     </div>
   );
 };

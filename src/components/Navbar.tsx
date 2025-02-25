@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Package } from "lucide-react";
+import { Menu, X, Truck } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-3 text-2xl font-bold logo-animate"
           >
-            <Package size={32} className="text-white" />
+            <Truck size={32} className="text-white" />
             <span className="flex flex-col">
               <span>SR Traders</span>
               <span className="text-sm font-normal text-white/80">Quality Waste Materials</span>
