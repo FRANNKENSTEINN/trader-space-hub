@@ -203,17 +203,14 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Rajesh Kumar",
                 role: "Regular Customer",
                 comment: "Excellent quality products and prompt delivery. Very satisfied with their service.",
               },
               {
-                name: "Priya Sharma",
                 role: "Business Owner",
                 comment: "Best wholesale supplier in Bangalore. Their products are always in high demand.",
               },
               {
-                name: "Mohammed Ali",
                 role: "Retailer",
                 comment: "Great customer service and competitive prices. Highly recommended!",
               },
@@ -224,7 +221,6 @@ const Index = () => {
                     <Star className="h-6 w-6 text-blue-500" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
