@@ -1,11 +1,18 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  images: string[];
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: "Cotton Waste",
@@ -85,9 +92,9 @@ const Products = () => {
     }));
   };
 
-  const createWhatsAppLink = (product: typeof products[0]) => {
+  const createWhatsAppLink = (product: Product) => {
     const message = `Hello SR Traders, I am interested in ${product.name}. Location: MS Palya Jamia Masjid, Bangalore`;
-    return `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    return `https://wa.me/9632777768?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -104,100 +111,48 @@ const Products = () => {
         </div>
 
         <div className="container mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Products</h1>
+          <h1 className="text-4xl font-bold text-center mb-12 text-gray-400">Our Products</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div
-                key={product.id}
-                className="glass-card rounded-xl overflow-hidden hover-scale"
-              >
-                <div className="relative">
-                  {('images' in product) ? (
+              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="relative aspect-square">
+                  <img
+                    src={product.images[imageIndexes[product.id] || 0]}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                  {product.images.length > 1 && (
                     <>
-                      <img
-                        src={product.images[imageIndexes[product.id] || 0]}
-                        alt={product.name}
-                        className="w-full h-64 object-cover transition-opacity duration-500"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-between px-4">
-                        <button
-                          onClick={() => handlePrevImage(product.id)}
-                          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                          aria-label="Previous image"
-                        >
-                          <ChevronLeft className="w-6 h-6" />
-                        </button>
-                        <button
-                          onClick={() => handleNextImage(product.id)}
-                          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                          aria-label="Next image"
-                        >
-                          <ChevronRight className="w-6 h-6" />
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => handlePrevImage(product.id)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+                      >
+                        <ChevronLeft size={20} />
+                      </button>
+                      <button
+                        onClick={() => handleNextImage(product.id)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+                      >
+                        <ChevronRight size={20} />
+                      </button>
                     </>
-                  ) : (
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-64 object-cover"
-                      loading="lazy"
-                    />
                   )}
                 </div>
+
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                  <h2 className="text-xl font-semibold mb-2 text-[#D4AF37]">{product.name}</h2>
                   <p className="text-gray-600 mb-4">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-bold text-primary">
-                      {product.price}
-                    </span>
-                    <a
-                      href={createWhatsAppLink(product)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#7C3AED] hover:text-[#D4AF37] transition-all duration-300 shadow-md text-sm font-medium"
-                    >
-                      Enquire Now
-                    </a>
-                  </div>
+                  <p className="text-blue-600 font-medium mb-4">{product.price}</p>
+                  <a
+                    href={createWhatsAppLink(product)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Contact for Price
+                  </a>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="container mx-auto mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass-card p-8 rounded-xl">
-              <h2 className="text-2xl font-semibold mb-4">Quality Guarantee</h2>
-              <p className="text-gray-600">
-                We stand behind the quality of our products. Each item is carefully selected
-                and inspected to ensure it meets our high standards.
-              </p>
-            </div>
-            <div className="glass-card p-8 rounded-xl">
-              <h2 className="text-2xl font-semibold mb-4">Shipping Information</h2>
-              <p className="text-gray-600">
-                We offer fast and reliable shipping across Bangalore. Most orders are
-                delivered within 24-48 hours. For bulk orders or special delivery
-                requirements, please contact us directly.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="container mx-auto mt-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {["Premium Collection", "Best Sellers", "New Arrivals"].map((category, index) => (
-              <div key={index} className="glass-card p-6 rounded-xl text-center">
-                <h3 className="text-xl font-semibold mb-2">{category}</h3>
-                <p className="text-gray-600">
-                  Explore our selection of carefully curated products.
-                </p>
               </div>
             ))}
           </div>
