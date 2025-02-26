@@ -107,6 +107,33 @@
   color: white;
 }
 
+@keyframes fast-marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-fast-marquee {
+  animation: fast-marquee 10s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background-size: 200% auto;
+}
+
 @layer utilities {
   .bg-300% {
     background-size: 300% 300%;

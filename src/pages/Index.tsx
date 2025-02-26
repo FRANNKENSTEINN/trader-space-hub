@@ -41,6 +41,69 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
+  const products = [
+    {
+      id: 1,
+      name: "Cotton Waste",
+      description: "High-quality cotton waste material with mixed colors.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/3303f777-99f6-4300-94f6-6803388432c9.png",
+        "/lovable-uploads/3ba1189f-5193-4bc4-90d3-445f0a4cd5d4.png"
+      ],
+    },
+    {
+      id: 2,
+      name: "Baniyan Waste",
+      description: "Premium baniyan waste material in vibrant colors.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/ee9dcde6-e402-468c-9117-d0fc9dc2169f.png",
+        "/lovable-uploads/f7d4860e-0eb4-4576-b52c-04f88b87e793.png"
+      ],
+    },
+    {
+      id: 3,
+      name: "Packed Waste (Cotton and Baniyan)",
+      description: "Professionally packed cotton and baniyan waste material.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/bb9597cf-5186-4922-9603-56bbba64fdd7.png",
+        "/lovable-uploads/24b20ca4-1ef1-488a-aa48-3b2cdd31d440.png"
+      ],
+    },
+    {
+      id: 4,
+      name: "Bulk",
+      description: "Large quantity packages available for bulk orders.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/e82329e9-b71d-4baa-9289-2d4f17429db0.png",
+        "/lovable-uploads/e5a51953-82f1-4c78-b29d-1f31de5ea946.png"
+      ],
+    },
+    {
+      id: 5,
+      name: "Cloth Waste",
+      description: "Mixed cloth waste material suitable for various applications.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/d2d04054-8341-4062-8800-e0561e81fad8.png",
+        "/lovable-uploads/e3f0ee5b-e582-4abe-8252-659fb4161259.png"
+      ],
+    },
+    {
+      id: 6,
+      name: "White Textured Waste",
+      description: "Premium white textured waste material for specific needs.",
+      price: "₹Contact for Price",
+      images: [
+        "/lovable-uploads/8ea6ccd4-8a6e-4b34-a5f8-de696aedf003.png",
+        "/lovable-uploads/c64ce376-adfd-4342-a051-557c9ff63fa9.png"
+      ],
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col dark:bg-black dark:text-white transition-colors duration-300">
       <ThemeToggle />
@@ -49,7 +112,7 @@ const Index = () => {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-[80vh] pt-24 pb-12 px-4 overflow-hidden animate-bg-fade"
+        className="relative min-h-[80vh] pt-24 pb-12 px-4 overflow-hidden animate-bg-fade flex items-center"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920')`,
           backgroundSize: 'cover',
@@ -74,24 +137,24 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-6 sm:space-y-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="text-5xl md:text-4xl sm:text-3xl font-bold text-white animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-[#D4AF37] to-white bg-300% animate-gradient">
               Welcome to SR Traders
             </h1>
-            <p className="text-xl md:text-lg sm:text-base text-blue-100 mb-8 animate-on-scroll opacity-0">
+            <p className="text-xl md:text-lg sm:text-base text-blue-100 mb-12 animate-on-scroll opacity-0">
               Your trusted partner for quality products and exceptional service in
               Bangalore
             </p>
-            <div className="space-x-4 animate-on-scroll opacity-0">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-on-scroll opacity-0">
               <Link
                 to="/products"
-                className="inline-block px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
+                className="w-full sm:w-auto px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="inline-block px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 font-semibold transform hover:-translate-y-1"
+                className="w-full sm:w-auto px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-transparent border-2 border-white text-white rounded-lg hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 font-semibold transform hover:-translate-y-1"
               >
                 Contact Us
               </Link>
@@ -183,8 +246,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { number: "1000+", label: "Happy Customers" },
-              { number: "500+", label: "Products Delivered" },
-              { number: "50+", label: "Product Categories" },
+              { number: "5000+", label: "Products Delivered" },
+              { number: "5+", label: "Product Categories" },
               { number: "24/7", label: "Customer Support" },
             ].map((stat, index) => (
               <div key={index} className="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-shadow">
@@ -246,6 +309,39 @@ const Index = () => {
           </Link>
         </div>
       </section>
+
+      {/* Products Section */}
+      <div className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 py-2 overflow-hidden">
+        <div className="animate-fast-marquee whitespace-nowrap">
+          <span className="text-white font-medium inline-block px-4">
+            ⚠️ Product prices may vary based on quality, quantity, and market conditions. Please contact us for the latest pricing information.
+          </span>
+        </div>
+      </div>
+
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="p-6">
+                <h2 className="text-xl font-semibold mb-2 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-silver to-gray-200">
+                  {product.name}
+                </h2>
+                <p className="text-gray-600 mb-4">{product.description}</p>
+                <p className="text-blue-600 font-medium mb-4">{product.price}</p>
+                <a
+                  href={`https://wa.me/9632777768?text=Hello SR Traders, I am interested in ${product.name}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Contact for Price
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <FloatingContact />
       <Footer />
