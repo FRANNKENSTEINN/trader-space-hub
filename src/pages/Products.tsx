@@ -102,7 +102,7 @@ const Products = () => {
       <Navbar />
 
       <main className="flex-grow pt-24 pb-16 px-4">
-        <div className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 py-2 overflow-hidden mb-8">
+        <div className="w-full bg-black py-2 overflow-hidden mb-8">
           <div className="animate-fast-marquee whitespace-nowrap">
             <span className="text-white font-medium inline-block px-4">
               ⚠️ Product prices may vary based on quality, quantity, and market conditions. Please contact us for the latest pricing information.
