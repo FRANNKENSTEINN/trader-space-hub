@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
@@ -142,7 +141,7 @@ const Products = () => {
                 </div>
 
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-silver to-gray-200">{product.name}</h2>
+                  <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <p className="text-blue-600 font-medium mb-4">{product.price}</p>
                   <a

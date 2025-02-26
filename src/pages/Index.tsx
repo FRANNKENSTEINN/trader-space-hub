@@ -148,7 +148,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-on-scroll opacity-0">
               <Link
                 to="/products"
-                className="w-full sm:w-auto px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1 dark:bg-black dark:text-white"
+                className="w-full sm:w-auto px-8 py-3 md:px-6 md:py-2 sm:px-4 sm:py-2 bg-white text-blue-600 rounded-lg hover:text-[#D4AF37] transition-all duration-300 font-semibold hover:bg-opacity-90 transform hover:-translate-y-1"
               >
                 Explore Products
               </Link>
