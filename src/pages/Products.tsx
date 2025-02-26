@@ -1,3 +1,4 @@
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingContact from "../components/FloatingContact";
@@ -102,8 +103,8 @@ const Products = () => {
       <Navbar />
 
       <main className="flex-grow pt-24 pb-16 px-4">
-        <div className="w-full bg-black py-2 overflow-hidden mb-8">
-          <div className="animate-marquee whitespace-nowrap">
+        <div className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 py-2 overflow-hidden mb-8">
+          <div className="animate-fast-marquee whitespace-nowrap">
             <span className="text-white font-medium inline-block px-4">
               ⚠️ Product prices may vary based on quality, quantity, and market conditions. Please contact us for the latest pricing information.
             </span>
@@ -141,7 +142,7 @@ const Products = () => {
                 </div>
 
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2 text-[#D4AF37]">{product.name}</h2>
+                  <h2 className="text-xl font-semibold mb-2 animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-silver to-gray-200">{product.name}</h2>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <p className="text-blue-600 font-medium mb-4">{product.price}</p>
                   <a
@@ -161,9 +162,6 @@ const Products = () => {
 
       <FloatingContact />
       <Footer />
-      <div className="bg-gray-900 text-white/80 py-2 text-center text-sm">
-        <p>© 2024 IK WEB DESIGNS. All rights reserved.</p>
-      </div>
     </div>
   );
 };
