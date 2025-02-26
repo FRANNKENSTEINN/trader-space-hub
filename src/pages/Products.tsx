@@ -115,12 +115,13 @@ const Products = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
                 <div className="relative aspect-square">
                   <img
                     src={product.images[imageIndexes[product.id] || 0]}
                     alt={product.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   {product.images.length > 1 && (
                     <>
@@ -140,18 +141,20 @@ const Products = () => {
                   )}
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <p className="text-blue-600 font-medium mb-4">{product.price}</p>
-                  <a
-                    href={createWhatsAppLink(product)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                  >
-                    Contact for Price
-                  </a>
+                  <div className="mt-auto">
+                    <a
+                      href={createWhatsAppLink(product)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Contact for Price
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
