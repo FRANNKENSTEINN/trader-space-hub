@@ -117,11 +117,11 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative">
+                <div className="relative h-64">
                   <img
                     src={product.images[imageIndexes[product.id] || 0]}
                     alt={product.name}
-                    className="w-full object-cover"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                   />
                   {product.images.length > 1 && (
