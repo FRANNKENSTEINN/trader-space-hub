@@ -116,7 +116,7 @@ const Products = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
+              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="relative">
                   <img
                     src={product.images[imageIndexes[product.id] || 0]}
@@ -142,22 +142,18 @@ const Products = () => {
                   )}
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <div>
-                    <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
-                    <p className="text-gray-600 mb-4">{product.description}</p>
-                    <p className="text-blue-600 font-medium mb-4">{product.price}</p>
-                  </div>
-                  <div className="mt-auto pt-4">
-                    <a
-                      href={createWhatsAppLink(product)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Contact for Price
-                    </a>
-                  </div>
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
+                  <p className="text-gray-600 mb-4">{product.description}</p>
+                  <p className="text-blue-600 font-medium mb-4">{product.price}</p>
+                  <a
+                    href={createWhatsAppLink(product)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Contact for Price
+                  </a>
                 </div>
               </div>
             ))}
