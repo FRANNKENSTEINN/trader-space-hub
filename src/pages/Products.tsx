@@ -102,22 +102,22 @@ const Products = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-grow pt-24 pb-16 px-4">
-        <div className="w-full bg-black py-2 overflow-hidden mb-8">
+      <main className="flex-grow pt-20 pb-16 px-2 sm:pt-24 sm:px-4">
+        <div className="w-full bg-black py-2 overflow-hidden mb-6 sm:mb-8">
           <div className="animate-fast-marquee whitespace-nowrap">
-            <span className="text-white font-medium inline-block px-4">
+            <span className="text-white font-medium inline-block px-4 text-sm sm:text-base">
               ⚠️ Product prices may vary based on quality, quantity, and market conditions. Please contact us for the latest pricing information.
             </span>
           </div>
         </div>
 
         <div className="container mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-400">Our Products</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-400">Our Products</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {products.map((product) => (
               <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-64">
+                <div className="relative h-48 sm:h-56 md:h-64">
                   <img
                     src={product.images[imageIndexes[product.id] || 0]}
                     alt={product.name}
@@ -128,29 +128,29 @@ const Products = () => {
                     <>
                       <button
                         onClick={() => handlePrevImage(product.id)}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
                       >
-                        <ChevronLeft size={20} />
+                        <ChevronLeft size={16} className="sm:w-5 sm:h-5" />
                       </button>
                       <button
                         onClick={() => handleNextImage(product.id)}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
                       >
-                        <ChevronRight size={20} />
+                        <ChevronRight size={16} className="sm:w-5 sm:h-5" />
                       </button>
                     </>
                   )}
                 </div>
 
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
+                <div className="p-4 sm:p-6">
+                  <h2 className="text-lg sm:text-xl font-semibold mb-2 text-white">{product.name}</h2>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">{product.description}</p>
                   <p className="text-blue-600 font-medium mb-4">{product.price}</p>
                   <a
                     href={createWhatsAppLink(product)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="inline-block w-full text-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm sm:text-base"
                   >
                     Contact for Price
                   </a>
