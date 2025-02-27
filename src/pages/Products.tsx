@@ -116,7 +116,7 @@ const Products = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+              <div key={product.id} className="glass-card rounded-xl overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
                 <div className="relative">
                   <img
                     src={product.images[imageIndexes[product.id] || 0]}
@@ -143,10 +143,12 @@ const Products = () => {
                 </div>
 
                 <div className="p-6 flex flex-col flex-grow">
-                  <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
-                  <p className="text-blue-600 font-medium mb-4">{product.price}</p>
-                  <div className="mt-auto">
+                  <div>
+                    <h2 className="text-xl font-semibold mb-2 text-white">{product.name}</h2>
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                    <p className="text-blue-600 font-medium mb-4">{product.price}</p>
+                  </div>
+                  <div className="mt-auto pt-4">
                     <a
                       href={createWhatsAppLink(product)}
                       target="_blank"
